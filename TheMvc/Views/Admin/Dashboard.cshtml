@@ -1,0 +1,65 @@
+﻿@model TheMvc.ViewModel.UserList
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<section id="contents">
+    <nav class="navbar navbar-white bg-white p">
+        <h1> DashBoard</h1>
+    </nav>
+    <div class="welcome mt-sm-3 mb-sm-5">
+        <div class="container-fluid">
+            <h2>Welcome @Model.User.FirstName,</h2>
+
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex mt-sm-3 mb-sm-5">
+        <div>
+            <img src="~/img/avatar.jpg" alt="..." class="img-thumbnail">
+        </div>
+        <div>
+            <h5>FullName : @Model.User.FirstName, @Model.User.LastName</h5>
+            <h5>Gender: @Model.User.Gender</h5>
+            <h5>Email: @Model.User.Email</h5>
+
+        </div>
+    </div>
+
+    <div class="text-hide" id="male"><h1> @ViewBag.male</h1></div>
+    <div class="text-hide" id="female"><h1> @ViewBag.female</h1></div>
+
+    <canvas id="myChart" class="chart-design"></canvas>
+
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"> Gender</th>
+                    <th scope="col">Date Of Employment</th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model.AllUsers)
+            {
+                <tbody>
+                    <tr>
+                        <th scope="row">-</th>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td> @item.Email</td>
+                        <td> @item.Gender</td>
+                        <td> @item.DateCreated</td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+    </div>
+</section>

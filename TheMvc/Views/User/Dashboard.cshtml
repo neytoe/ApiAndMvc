@@ -1,0 +1,26 @@
+﻿
+@model TheMvc.ViewModel.UserList
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<section class="container">
+    <nav class="navbar navbar-dark bg-primary rounded">
+        <h1>DashBoard</h1>
+    </nav>
+
+    <h3> @Model.User.FirstName, @Model.User.LastName</h3> 
+
+    <div class="container-fluid d-flex align-content-lg-around">
+        <div>
+            <img src="~/img/avatar.jpg" alt="..." class="img-thumbnail">
+        </div>
+        <div>
+            <h5>FullName : @Model.User.FirstName, @Model.User.LastName</h5>
+            <h5>Gender: @Model.User.Gender</h5>
+            <h5>Email: @Model.User.Email</h5>
+
+        </div>
+    </div>
+
+</section>
